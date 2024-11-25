@@ -1,5 +1,7 @@
 # Instalación de paquetes necesarios
 
+## Tabla de Contenidos
+
 Para configurar el punto de acceso, primero debes instalar algunos paquetes que son esenciales:
 
 1. Hostapd: Este paquete se encarga de gestionar el punto de acceso WiFi.
@@ -94,7 +96,7 @@ sudo systemctl enable dnsmasq
 ```
 Asegúrate de que rc.local ejecute la restauración de las reglas de iptables y reinicie hostapd:
 
-```
+```plaintext
 sudo nano /etc/rc.local
 ```
 Asegúrate de que se añadan estas líneas antes de exit 0:
@@ -108,42 +110,15 @@ Dale permisos ejecutables a rc.local:
 ```
 sudo chmod +x /etc/rc.local
 ```
-9. Reiniciar la Raspberry Pi
+# Reiniciar la Raspberry Pi
 Reinicia la Raspberry Pi para aplicar todas las configuraciones:
 
-bash
-Copiar código
-sudo reboot
-10. Verificación del servicio
-Después de reiniciar, asegúrate de que el servicio hostapd esté en ejecución:
-
-bash
-Copiar código
-sudo systemctl status hostapd
-Puedes verificar que el punto de acceso está funcionando correctamente al buscar el SSID (domotica) desde otro dispositivo.
-
-## Tabla de Contenidos
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-
-## Instalación
-
-Describe los pasos necesarios para instalar y ejecutar el proyecto. Por ejemplo:
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
-   ```
-2. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-
-## Uso
-
-Instrucciones sobre cómo usar el proyecto una vez esté instalado.
-
 ```bash
-node app.js
+sudo reboot
+```
+# Verificación del servicio
+Después de reiniciar, asegúrate de que el servicio hostapd esté en ejecución:
+```
+sudo systemctl status hostapd
+```
+Puedes verificar que el punto de acceso está funcionando correctamente al buscar el SSID (domotica) desde otro dispositivo.
